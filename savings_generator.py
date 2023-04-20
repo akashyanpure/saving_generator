@@ -20,8 +20,9 @@ def check_number_in_file(num):
         # read file content as a list
         with open('numbers.txt', 'r') as f:
             file_content = f.read().splitlines()
-            print("file content is: ", file_content)
+            # print("file content is: ", file_content)
             if str(num) not in file_content:
+                print("generated number is: ", num)
                 append_number_to_file(num)
                 print("file content updated")
                 return False
@@ -38,6 +39,5 @@ def append_number_to_file(num):
 if __name__ == "__main__":
     while(flag):
         num = random_number_generator()
-        print("generated number is: ", num)
         flag = check_number_in_file(num)
         
